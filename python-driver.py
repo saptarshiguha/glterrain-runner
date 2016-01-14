@@ -1,5 +1,6 @@
 from __future__ import print_function
 
+## pip install selenium
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait # available since 2.4.0
@@ -11,14 +12,9 @@ import time
 import os, sys
 import json
 
-## Change this. numiter is 25 to match talos, though I have kept 50 filename is
-## where the output is kept Note here, firefox is started once and the page is
-## reloaded multiple times Another approach would be to restart Firefox each
-## time which is handled here too
 
-
-numrestart = 1 # Firefox will start this number of times
-numiter = 20   # The page will be loaded this number of times
+numrestart = 1                                                                  # Firefox will start this number of times
+numiter = 40                                                                    # The page will be loaded this number of times
 saveData = "/tmp/glterrain-result-"+str(calendar.timegm(time.gmtime()))+".json" # Where to save the data
 
 restarts = []
